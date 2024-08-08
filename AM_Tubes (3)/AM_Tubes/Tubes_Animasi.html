@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tas Merahku</title>
+    <link rel="stylesheet" href="WebTB.css">
+    <link rel="icon" type="image/png" href="IMG/Icon.png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./IMG/Icon.png" alt="Logo">
+        </div>
+        <div class="header-content">
+            <h1>Tas Merahku</h1>
+        <div class="search-bar-container">
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Cari produk...">
+                <button type="button" onclick="searchProducts()">Cari</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="advertisement">
+            <video id="ad-video" width="100%" height="auto">
+                <source src="Vid_TB.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+        <section id="Fashion">
+            <h2>Pakaian</h2>
+            <div class="product-grid" id="product-grid">
+                <div class="product-card" data-name="Sepatu">
+                    <img src="./IMG/sepatu.jpeg" alt="Pakaian Image">
+                    <h3>Sepatu</h3>
+                    <p>Rp. 235.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Sepatu', -1)">-</button>
+                        <input type="number" id="quantity-Sepatu" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Sepatu', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Sepatu', 235000, 'quantity-Sepatu')">Beli</button>
+                </div>
+                <div class="product-card" data-name="Baju">
+                    <img src="./IMG/baju.jpeg" alt="Baju Image">
+                    <h3>Baju</h3>
+                    <p>Rp. 150.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Baju', -1)">-</button>
+                        <input type="number" id="quantity-Baju" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Baju', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Baju', 150000, 'quantity-Baju')">Beli</button>
+                </div>
+                <div class="product-card" data-name="Celana">
+                    <img src="./IMG/celana.jpeg" alt="Celana Image">
+                    <h3>Celana</h3>
+                    <p>Rp. 220.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Celana', -1)">-</button>
+                        <input type="number" id="quantity-Celana" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Celana', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Celana', 220000, 'quantity-Celana')">Beli</button>
+                </div>
+                <div class="product-card" data-name="Topi">
+                    <img src="./IMG/topi.jpeg" alt="Topi Image">
+                    <h3>Topi</h3>
+                    <p>Rp. 100.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Topi', -1)">-</button>
+                        <input type="number" id="quantity-Topi" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Topi', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Topi', 100000, 'quantity-Topi')">Beli</button>
+                </div>
+                <div class="product-card" data-name="Kemeja">
+                    <img src="./IMG/kemeja.jpeg" alt="Kemeja Image">
+                    <h3>Kemeja</h3>
+                    <p>Rp. 300.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Kemeja', -1)">-</button>
+                        <input type="number" id="quantity-Kemeja" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Kemeja', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Kemeja', 300000, 'quantity-Kemeja')">Beli</button>
+                </div>
+                <div class="product-card" data-name="Lingrie">
+                    <img src="./IMG/lingrae.jpeg" alt="Lingrie IMG">
+                    <h3>Lingrie</h3>
+                    <p>Rp. 150.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Lingrie', -1)">-</button>
+                        <input type="number" id="quantity-Lingrie" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Lingrie', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Lingrie', 150000, 'quantity-Lingrie')">Beli</button>
+                </div> 
+            </div>
+            <br>
+            <div class="product-grid" id="product-grid">
+                <div class="product-card" data-name="Kaos kaki">
+                    <img src="./IMG/kaos k.jpeg" alt="Kaos kaki Image">
+                    <h3>Kaos kaki</h3>
+                    <p>Rp. 80.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Kaos kaki', -1)">-</button>
+                        <input type="number" id="quantity-Kaos-kaki" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Kaos kaki', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Kaos kaki', 80000, 'quantity-Kaos-kaki')">Beli</button>
+                </div>
+                <div class="product-card" data-name="Crop Top">
+                    <img src="./IMG/crop top.jpeg" alt="Crop Top Image">
+                    <h3>Crop TOP</h3>
+                    <p>Rp. 130.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Crop Top', -1)">-</button>
+                        <input type="number" id="quantity-Crop-Top" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Crop Top', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Crop Top', 130000, 'quantity-Crop-Top')">Beli</button>
+                </div>
+                <div class="product-card" data-name="Celana joger">
+                    <img src="./IMG/celana j.jpeg" alt="Celana joger Image">
+                    <h3>Celana joger</h3>
+                    <p>Rp. 180.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Celana joger', -1)">-</button>
+                        <input type="number" id="quantity-Celana-joger" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Celana joger', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Celana joger', 180000, 'quantity-Celana-joger')">Beli</button>
+                </div> 
+                <div class="product-card" data-name="Anting">
+                    <img src="./IMG/anting.jpeg" alt="Anting Image">
+                    <h3>Anting</h3>
+                    <p>Rp. 3.000.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Anting', -1)">-</button>
+                        <input type="number" id="quantity-Anting" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Anting', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Anting', 3000000, 'quantity-Anting')">Beli</button>
+                </div> 
+                <div class="product-card" data-name="Cincin">
+                    <img src="./IMG/cincin.jpeg" alt="Cincin Image">
+                    <h3>Cincin</h3>
+                    <p>Rp. 2.300.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Cincin', -1)">-</button>
+                        <input type="number" id="quantity-Cincin" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Cincin', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Cincin', 2300000, 'quantity-Cincin')">Beli</button>
+                </div> 
+                <div class="product-card" data-name="Jam Tangan">
+                    <img src="./IMG/jam  t.jpeg" alt="Jam Tangan Image">
+                    <h3>Jam Tangan</h3>
+                    <p>Rp. 5.000.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Jam Tangan', -1)">-</button>
+                        <input type="number" id="quantity-Jam-Tangan" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Jam Tangan', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Jam Tangan', 5000000, 'quantity-Jam-Tangan')">Beli</button>
+                </div>
+                 
+            </div>   
+        </section>
+        <br>
+
+
+        <section id="Electronic">
+            <h2>Elektronik</h2>
+            <div class="product-grid" id="product-grid">
+                <div class="product-card" data-name="Laptop">
+                    <img src="./IMG/Laptop.jpeg" alt="Laptop Image">
+                    <h3>Laptop</h3>
+                    <p>Rp. 15.000.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Laptop', -1)">-</button>
+                        <input type="number" id="quantity-Laptop" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Laptop', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Laptop', 15000000, 'quantity-Laptop')">Beli</button>
+                </div>
+                <div class="product-card" data-name="TV">
+                    <img src="./IMG/tv.jpeg" alt="TV Image">
+                    <h3>TV</h3>
+                    <p>Rp. 7.000.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('TV', -1)">-</button>
+                        <input type="number" id="quantity-TV" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('TV', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('TV', 7000000, 'quantity-TV')">Beli</button>
+                </div>
+                <div class="product-card" data-name="Speaker">
+                    <img src="./IMG/Speak.jpeg" alt="Speaker Image">
+                    <h3>Speaker</h3>
+                    <p>Rp. 1.200.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Speaker', -1)">-</button>
+                        <input type="number" id="quantity-Speaker" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Speaker', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Speaker', 1200000, 'quantity-Speaker')">Beli</button>
+                </div>
+                <div class="product-card" data-name="Mouse">
+                    <img src="./IMG/Mouse.jpeg" alt="Mouse Image">
+                    <h3>Mouse</h3>
+                    <p>Rp. 1.100.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Mouse', -1)">-</button>
+                        <input type="number" id="quantity-Mouse" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Mouse', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Mouse', 200000, 'quantity-Mouse')">Beli</button>
+                </div>
+                <div class="product-card" data-name="Headset">
+                    <img src="./IMG/HS.jpeg" alt="Headset Image">
+                    <h3>Headset</h3>
+                    <p>Rp. 600.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Headset', -1)">-</button>
+                        <input type="number" id="quantity-Headset" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Headset', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Headset', 600000, 'quantity-Headset')">Beli</button>
+                </div>
+                <div class="product-card" data-name="Play Station 5">
+                    <img src="./IMG/PS5.jpeg" alt="Play Station 5 Image">
+                    <h3>Play Station 5</h3>
+                    <p>Rp. 8.000.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Play Station 5', -1)">-</button>
+                        <input type="number" id="quantity-Play-Station-5" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Play Station 5', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Play Station 5', 8000000, 'quantity-Play-Station-5')">Beli</button>
+                </div>
+            </div>
+            <br>
+            <div class="product-grid" id="product-grid">
+                <div class="product-card" data-name="Kipas angin">
+                    <img src="./IMG/kipas a.jpeg" alt="Kipas angin Image">
+                    <h3>Kipas angin</h3>
+                    <p>Rp.500.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Kipas angin', -1)">-</button>
+                        <input type="number" id="quantity-Kipas-angin" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Kipas angin', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('kipas angin', 500000, 'quantity-Kipas-angin')">Beli</button>
+                </div>
+                <div class="product-card" data-name="Monitor Gaming">
+                    <img src="./IMG/monitor.jpeg" alt="Monitor Gaming Image">
+                    <h3>Monitor Gaming </h3>
+                    <p>Rp. 4.000.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Monitor Gaming', -1)">-</button>
+                        <input type="number" id="quantity-Monitor-Gaming" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Monitor Gaming', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Monitor Gaming', 4000000, 'quantity-Monitor-Gaming')">Beli</button>
+                </div>
+                <div class="product-card" data-name="Keyboard Mechanical">
+                    <img src="./IMG/keyboard.jpeg" alt="Keyboard Mechanical Image">
+                    <h3>Keyboard Mechanical</h3>
+                    <p>Rp. 600.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Keyboard Mechanical', -1)">-</button>
+                        <input type="number" id="quantity-Keyboard-Mechanical" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Keyboard Mechanical', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Keyboard Mechanical', 600000, 'quantity-Keyboard-Mechanical')">Beli</button>
+                </div>
+                <div class="product-card" data-name="Air Condisiouner">
+                    <img src="./IMG/ac.jpeg" alt="Air Condisiouner Ismage">
+                    <h3>Air Condisiouner</h3>
+                    <p>Rp. 3.100.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Air Condisiouner', -1)">-</button>
+                        <input type="number" id="quantity-Air-Condisiouner" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Air Condisiouner', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Air Condisiouner', 3100000, 'quantity-Air-Condisiouner')">Beli</button>
+                </div>
+                <div class="product-card" data-name="Oven">
+                    <img src="./IMG/oven.jpeg" alt="Oven Image">
+                    <h3>Oven</h3>
+                    <p>Rp. 4.000.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Oven', -1)">-</button>
+                        <input type="number" id="quantity-Oven" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Oven', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Oven', 4000000, 'quantity-Oven')">Beli</button>
+                </div>
+                <div class="product-card" data-name="Kompor Listrik">
+                    <img src="./IMG/kompor.jpeg" alt="Kompor Listrik Image">
+                    <h3>Kompor Listrik</h3>
+                    <p>Rp. 5.000.000</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="changeQuantity('Kompor Listrik', -1)">-</button>
+                        <input type="number" id="quantity-Kompor-Listrik" value="0" min="0" oninput="validateQuantity(this)">
+                        <button class="quantity-button" onclick="changeQuantity('Kompor Listrik', 1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCart('Kompor Listrik', 5000000, 'quantity-Kompor-Listrik')">Beli</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
